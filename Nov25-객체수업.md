@@ -1,4 +1,5 @@
-#Generic Programming
+# Generic Programming
+
 * Paradigm of generic programming
 	* Decide which algorithms you want
 	* Parameterize them so that they work for a variety of suitable types and data structures
@@ -6,8 +7,10 @@
 	* sorting, search
 	* array, linked list
 	* int, string
-#Template basics
-'''c++
+
+# Template basics
+
+```c++
 class St {
 	int data;
 	public:
@@ -24,8 +27,11 @@ int main() {
 	S1.outs();
 	return 0;
 }
-'''
-'''c++
+```
+
+ã…ã…‡
+
+```c++
 #include <iostream>
 template <class T> class St {
 	T data;
@@ -47,12 +53,14 @@ int main()
 	
 	return 0;
 }
-'''
+```
+
 #Template
 * Template can have multiple arguments
 #Template Instantiations
 * To use a template class, specify a data type in angle brackets
-'''c++
+
+```c++
 Array <int> a1(100);
 a1[3] = 30;
 Array <double> a2(20);
@@ -61,15 +69,17 @@ Array <string> a3(40);
 a3[30] = "test";
 cout<<""<<endl;
 (...)
-'''
+```
 #Template Class in Parameter List
 #Function Style Parameters
 * Template class can have prarameters that are not class praramenters
-'''c++
+
+```c++
 //We can use literal as template parameter
 Array <Student, 50> cs232;
 Array <int, 100> a1;
-'''
+```
+
 #Function Templates
 * Function overloading
 	* similar operations with different data types and (maybe) different logics
@@ -78,8 +88,9 @@ Array <int, 100> a1;
 	* sorting, searching, etc
 #Sample Application
 * Template stack class
-'''c++
-//±è¿µ½Å ¸ÛÃ»ÀÌ
+
+```c++
+//ê¹€ì˜ì‹  ë©ì²­ì´
 #include <iostream>
 #include <string>
 //#define NDEBUG
@@ -89,7 +100,7 @@ template < class T >
 class Stack {
 public:
 	enum { DefaultStack = 50, EmptyStack = -1 };
-	//¹¹½Ã±âÀú½Ã±â
+	//ë­ì‹œê¸°ì €ì‹œê¸°
 	
 }
 
@@ -97,13 +108,14 @@ public:
 
 template <class T>
 Stack < T > :: push(const T & e) {
-	//Á¶°Ç Ã¼Å©
+	//ì¡°ê±´ ì²´í¬
 	assert( !full() );
 	if( !full() )
 		elements[ ++top ] = e;
 	else
 		msg( "stack full!" );
 }
+```
 
 #Standard Template Library
 * Standard Template Library (STL)
@@ -125,8 +137,9 @@ Stack < T > :: push(const T & e) {
 	* mechanism for accesing the objects in a container
 
 #Basic sequential container
-* Vector : »ç¿ëÀÚ°¡ ¹è¿­°ú´Â ´Ş¸® ArrayÀÇ Å©±â¸¦ ½Å°æ¾²Áö ¾Ê¾Æµµ µÇ´ÂÅ¸ÀÔ
-'''c++
+* Vector : ì‚¬ìš©ìê°€ ë°°ì—´ê³¼ëŠ” ë‹¬ë¦¬ Arrayì˜ í¬ê¸°ë¥¼ ì‹ ê²½ì“°ì§€ ì•Šì•„ë„ ë˜ëŠ”íƒ€ì…
+
+```c++
 int main()
 {
 	vector<int>nums;
@@ -137,9 +150,10 @@ int main()
 		cout<<nums[i]<<endl;
 	return 0;
 }
-'''
+```
 * Iterator
-'''c++
+
+```c++
 #include <iostream>
 #include <string>
 #include <list>
@@ -152,7 +166,7 @@ void dump(list<string> &m)
 		cout<<*it<<endl;
 	}
 }
-'''
+```
 
 #Efficiency of vector, deque & list
 * [] is overloaded for vectors and deques, but not for lsits
@@ -162,8 +176,9 @@ void dump(list<string> &m)
 * Associative containers
 	* set: collection of zero or more non-duplicate unordered elements (keys)
 	* map : (key, value) pair
-	*multimap : Áßº¹ Çã¿ë
-'''c++
+	*multimap : ì¤‘ë³µ í—ˆìš©
+
+```c++
 #include <map>
 int main() {
 	map<string, string> m;
@@ -171,14 +186,15 @@ int main() {
 	m["fajie"] = "CSE";
 	...
 }
-'''
+```
 
 #Container Adaptors
 * Container Adaptors
 	* A container adaptor adapts ....
 
 #Algorithms
-* sort °°Àº°Å ÀÖÀ½
-'''c++
+* sort ê°™ì€ê±° ìˆìŒ
+
+```c++
 sort(it.begin(), it.end(), comp);
-'''
+```
