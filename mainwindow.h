@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTimer>
+#include "character.h"
 
 namespace Ui {
 class MainWindow;
@@ -19,6 +20,7 @@ public:
 private:
     Ui::MainWindow *ui;
     QTimer timer;
+    character * me;
 };
 
 #endif // MAINWINDOW_H
