@@ -17,10 +17,14 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+protected:
+    void keyPressEvent(QKeyEvent *event);
+
 private:
     Ui::MainWindow *ui;
     QTimer timer;
     character * me;
+    QWidget * central;
 };
 
 #endif // MAINWINDOW_H

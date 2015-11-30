@@ -14,9 +14,17 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    character.cpp
+    character.cpp \
+    map.cpp
 
 HEADERS  += mainwindow.h \
-    character.h
+    character.h \
+    map.h \
+    mapdata.h
 
 FORMS    += mainwindow.ui
+
+DISTFILES +=
+
+RESOURCES += \
+    resource.qrc
